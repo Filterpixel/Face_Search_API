@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+venv/
+
+data/
+models/
+
+temp_*
+*.zip
+*.jpg
+*.png
+
+.gradio/
