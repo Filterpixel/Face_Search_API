@@ -130,20 +130,7 @@ Upload a `.zip` file containing images. The API will:
 
 ---
 
-## 🧠 How It Works
 
-### Face Embedding
-Uses **InsightFace (AuraFace)** to generate 512-dimensional, L2-normalized face vectors from detected faces in an image.
-
-### Similarity Search
-FAISS `IndexFlatIP` performs inner product search over normalized vectors, which is equivalent to **cosine similarity** — giving fast and accurate nearest-neighbor lookup.
-
-### Duplicate Detection
-Before indexing, each new face embedding is compared against existing entries. Faces with similarity above the deduplication threshold are skipped:
-
-```python
-SIM_THRESHOLD_DUP = 0.9
-```
 
 ---
 
@@ -164,25 +151,5 @@ SIM_THRESHOLD_DUP = 0.9
 | `NoneType has no attribute shape` | Invalid/corrupt image upload | Check the uploaded file |
 | `faiss not defined` | Missing import | Add `import faiss` at the top |
 
----
 
-## 📈 Roadmap
 
-- [ ] Face clustering (identity grouping)
-- [ ] GPU acceleration support
-- [ ] Vector DB integration (Milvus / Pinecone)
-- [ ] Async indexing pipeline
-- [ ] Docker deployment
-
----
-
-## 👨‍💻 Author
-
-**Shashank Mishra**  
-B.Tech — Data Science & AI | IIIT Naya Raipur
-
----
-
-## ⭐ Support
-
-If you found this project useful, consider giving it a star on GitHub — it helps a lot!
